@@ -42,7 +42,7 @@ Grab NetNTLM hashes off the network
 
 #### Filter logs from logs folder and remove machine accounts:
 
-`sort -m *.txt | uniq -d | awk '!/\$/'
+`sort -m *.txt | uniq -d | awk '!/\$/'`
 
 #### Cracking with John:
 
@@ -118,6 +118,6 @@ Run locally on non-domain joined machine (remember to add target domain to regis
 
 ### SharpHound
 
-SharpHound.exe --CollectionMethond All
+`SharpHound.exe --CollectionMethond All`
 
 
