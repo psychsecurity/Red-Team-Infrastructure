@@ -261,6 +261,8 @@ https://raw.githubusercontent.com/xan7r/kerberoast/master/autokerberoast.ps1
 
 Invoke-AutoKerberoast
 
+`python autoKirbi2hashcat.py ticketfilefromautoinvokekerberoast`
+
 ### Hashcat Alienware - kerbtgt hash cracking
 
 `sudo apt-get install nvidia-367`
