@@ -68,7 +68,9 @@ Use hashcat on a more powerful box. This is only for easy wins.
 When you have an initial set of compromised creds run these from a Virtual Machine to place foothold on network as domain user.
 
 ### Shell with domain user privileges
-`C:\runas.exe /netonly /user:BLAHDOMAIN\blahuser “cmd.exe”`
+`C:\runas.exe /netonly /user:BLAHDOMAIN\blahuser cmd.exe`
+
+Make sure you use the FQDN of the domain and set the reg key as below.
 
 ### check dc: 
 `nltest /dsgetdc:domain.local`
@@ -120,7 +122,7 @@ Run locally on non-domain joined machine (remember to add target domain to regis
 
 ### SharpHound
 
-`SharpHound.exe --CollectionMethond All`
+`SharpHound.exe --CollectionMethod All`
 
 ### Run from remote shell
 
