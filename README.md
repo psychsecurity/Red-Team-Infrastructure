@@ -8,7 +8,7 @@
 
 ### Extract Linkedin details from snov.io
 
-Regext to extract emails
+Regex to extract emails
 
 `grep -E -o "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b"`
 
