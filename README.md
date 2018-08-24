@@ -318,3 +318,13 @@ Invoke-AutoKerberoast
 ### LAPS - GetLAPSPasswords
 
 https://github.com/kfosaaen/Get-LAPSPasswords/blob/master/Get-LAPSPasswords.ps1
+
+## File Transfer
+
+### SMB Server in Kali
+
+`python smbserver.py test /root/tools`
+
+### Python Web Server
+
+`python -m SimpleHTTPServer <port>`
