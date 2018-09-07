@@ -69,6 +69,7 @@ Password1
 Password!
 Welcome1
 Welcome!
+Welcome@123
 P@55word
 P@55w0rd
 $month$year
