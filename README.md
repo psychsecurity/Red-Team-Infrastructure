@@ -1,7 +1,7 @@
 # Red-Team and Infrastructure Assessments
 ## Cert search
 https://crt.sh
-
+`%.blah.com`
 ## Domain User Enumeration
 
 ### Grab employee names from Linkedin
