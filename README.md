@@ -2,6 +2,8 @@
 ### Cert search
 https://crt.sh
 `%.blah.com`
+### search categorized expired domain
+`python3 ./domainhunter.py -r 1000`
 
 ### Metadata
 `PS C:\> Invoke-PowerMeta -TargetDomain targetdomain.com`
