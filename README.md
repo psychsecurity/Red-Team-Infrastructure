@@ -373,3 +373,12 @@ https://github.com/kfosaaen/Get-LAPSPasswords/blob/master/Get-LAPSPasswords.ps1
 ### Python Web Server
 
 `python -m SimpleHTTPServer <port>`
+
+### Domain Fronting
+
+https://blog.cobaltstrike.com/2017/02/06/high-reputation-redirectors-and-domain-fronting/
+https://signal.org/blog/doodles-stickers-censorship/
+https://www.securityartwork.es/2017/01/24/camouflage-at-encryption-layer-domain-fronting/
+https://trac.torproject.org/projects/tor/wiki/doc/meek
+http://bryceboe.com/2012/03/12/bypassing-gogos-inflight-internet-authentication/
+
