@@ -1,4 +1,8 @@
 # Red-Team and Infrastructure Assessments
+
+### O365 bruting
+
+`python3 office365userenum.py -u test.txt -v -o output.txt --password 'Password1'
 ### Cert search
 https://crt.sh
 `%.blah.com`
