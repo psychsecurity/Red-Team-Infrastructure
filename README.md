@@ -33,6 +33,10 @@ Regex to extract emails
 
 `grep -E -o "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b"`
 
+### Extract from burp 
+
+`cat linkedin.txt | tr , '\n' | sed 's/\”//g' | awk '/"title":{"textDirection":"FIRST_STRONG"/{getline; print}'`
+
 ### Change format to b.lah
 
 `awk '=FS tolower(substr(,1,1)$NF)' linkedin-user-list.txt | awk '{ print   }'`
