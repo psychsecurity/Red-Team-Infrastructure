@@ -41,6 +41,8 @@ Regex to extract emails
 
 `awk '=FS tolower(substr(,1,1)$NF)' linkedin-user-list.txt | awk '{ print   }'`
 
+`awk '{print $0,tolower(substr($1,1,1)$NF)}' names.txt`
+
 ### Check usernames against AD:
 
 Handy if you have generated a list from linkedin or a list of usernames.
