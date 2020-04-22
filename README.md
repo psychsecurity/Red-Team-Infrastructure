@@ -325,6 +325,8 @@ To find where NTDS is run the below:
 
 `vssadmin delete shadows /shadow={cd534584-a272-44ab-81e1-ab3f5fbe9b29}`
 
+godumpsecrets for faster
+
 ### ntdsutil
 
 ```
