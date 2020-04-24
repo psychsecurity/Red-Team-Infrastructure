@@ -59,6 +59,10 @@ Still works on infra that was upgraded from 2k, 2k3.
 
 Use enum4linux, enum or Dumpsec following the null session setup.
 
+## situational awareness
+
+https://github.com/dafthack/HostRecon
+
 ## Network Attacks 
 
 ### Responder
