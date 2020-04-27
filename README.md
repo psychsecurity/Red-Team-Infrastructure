@@ -331,7 +331,13 @@ To find where NTDS is run the below:
 
 `secretsdump.py -system system.save -ntds ntds.dit local -just-dc-ntlm`
 
+remove machine accounts
+
 `grep -a -F ':::' hashes.txt | grep -av '$:' > finalhashes.txt`
+
+only passwords for pipal
+
+`cut -f 3 -d ':' cracked_with_users_enabled.txt`
 
 `vssadmin delete shadows /shadow={cd534584-a272-44ab-81e1-ab3f5fbe9b29}`
 
