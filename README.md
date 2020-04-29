@@ -3,6 +3,11 @@
 ### O365 bruting
 
 `python3 office365userenum.py -u test.txt -v -o output.txt --password 'Password1'
+
+Enumeration (opsec safe):
+
+`python o365creeper.py -f test.txt`
+
 ### Cert search
 https://crt.sh
 `%.blah.com`
