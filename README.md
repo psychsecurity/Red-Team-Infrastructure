@@ -68,6 +68,9 @@ Use enum4linux, enum or Dumpsec following the null session setup.
 
 https://github.com/dafthack/HostRecon
 
+Privesc checks:
+https://book.hacktricks.xyz/windows/checklist-windows-privilege-escalation
+
 ## Network Attacks 
 
 ### Responder
