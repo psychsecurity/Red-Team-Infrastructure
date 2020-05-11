@@ -8,6 +8,8 @@ Enumeration (opsec safe):
 
 `python o365creeper.py -f test.txt`
 
+https://github.com/0xZDH/o365spray
+
 ### Cert search
 https://crt.sh
 `%.blah.com`
