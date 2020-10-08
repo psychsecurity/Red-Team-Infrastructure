@@ -10,6 +10,10 @@ Enumeration (opsec safe):
 
 https://github.com/0xZDH/o365spray
 
+### subdomain finder
+
+https://spyse.com/
+
 ### Cert search
 https://crt.sh
 `%.blah.com`
