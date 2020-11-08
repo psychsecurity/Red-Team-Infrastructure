@@ -70,6 +70,12 @@ Still works on infra that was upgraded from 2k, 2k3.
 
 Use enum4linux, enum or Dumpsec following the null session setup.
 
+### GPP 
+
+https://bitbucket.org/grimhacker/gpppfinder/src/master/
+
+`findstr /S /I cpassword \\<FQDN>\sysvol\<FQDN>\policies\*.xml`
+
 ## situational awareness
 
 https://github.com/dafthack/HostRecon
