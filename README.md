@@ -143,8 +143,8 @@ $month$year
 
 ### Local admin search using net use
 
-`@FOR /F %s in (systems.txt) DO @net use \\%s\C$ /.\Administrator 
-AdminPass 1>NUL 2>&1 && @echo %s>>admin_access.txt && @net use 
+`@FOR /F %s in (systems.txt) DO @net use \\%s\C$ /user:domain\username  
+Password 1>NUL 2>&1 && @echo %s>>admin_access.txt && @net use 
 /delete \\%s\C$ > NUL`
 
 ### Domain joined machine
