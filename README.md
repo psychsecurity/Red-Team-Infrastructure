@@ -1,5 +1,9 @@
 # Red-Team and Infrastructure Assessments
 
+### External recon
+
+https://github.com/dcsync/recontools
+
 ### O365 bruting
 
 `python3 office365userenum.py -u test.txt -v -o output.txt --password 'Password1`
