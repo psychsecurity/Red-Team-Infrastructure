@@ -42,6 +42,8 @@ https://crt.sh
 
 `theharvester -d blah.com -l 1000 -b linkedin`
 
+https://github.com/m8r0wn/CrossLinked
+
 ### Extract Linkedin details from snov.io
 
 Regex to extract emails
