@@ -515,3 +515,7 @@ https://www.mdsec.co.uk/2018/03/payload-generation-using-sharpshooter/
 user to which box the user has localadmin
 
 `MATCH (u:User)-[r:MemberOf|:AdminTo*1..]->(c:Computer) return u.name, collect(c.name)`
+
+List of DAs
+
+`Match p=(u:User)-[:MemberOf]->(g:Group) WHERE g.name= "DOMAIN ADMINS@INTERNAL.CROWNLTD.COM.AU" return u.displayname`
