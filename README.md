@@ -258,6 +258,9 @@ Out-File -Encoding Ascii interesting-shares.txt`
 `Invoke-FileFinder -ShareList .\interesting-shares.txt -Verbose -Threads 
 20 -OutFile juicy_files.csv`
 
+### Eyewitness
+docker run --rm -it -v /tmp/blah:/tmp/EyeWitness eyewitness --web --single https://www.google.com
+
 ### Windows priv esc
 
 https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/
