@@ -169,6 +169,8 @@ When you have an initial set of compromised creds run these from a Virtual Machi
 ### Shell with domain user privileges
 `C:\runas.exe /netonly /user:BLAHDOMAIN\blahuser cmd.exe`
 
+`runas /netonly /user:blah@blah.com "mmc %SystemRoot%\system32\dsa.msc`
+
 Make sure you use the FQDN of the domain and set the reg key as below.
 
 ### check dc: 
