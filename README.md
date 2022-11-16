@@ -523,4 +523,4 @@ user to which box the user has localadmin
 
 List of DAs
 
-`Match p=(u:User)-[:MemberOf]->(g:Group) WHERE g.name= "DOMAIN ADMINS@INTERNAL.CROWNLTD.COM.AU" return u.displayname`
+`Match p=(u:User)-[:MemberOf]->(g:Group) WHERE g.name= "DOMAIN ADMINS@BLAH.COM" return u.displayname`
